@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ProductService, Product } from '../../data-access/products.service';
+import { ProductService } from '../../data-access/products.service';
+import { Product } from '../../../shared/interfaces/products.interface';
 
 @Component({
   selector: 'app-product-list',

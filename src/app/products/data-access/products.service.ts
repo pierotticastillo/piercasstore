@@ -1,22 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { Product } from './../../shared/interfaces/products.interface';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BaseHttpService } from '../../shared/data-access/base-http-service';
-
-export interface Rating {
-  rate: number;
-  count: number;
-}
-
-export interface Product {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: Rating;
-}
 
 @Injectable({
   providedIn: 'root',
