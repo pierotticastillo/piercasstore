@@ -1,6 +1,6 @@
-import { Product } from "./products.interface";
+import { Product } from './products.interface';
 
 export interface State {
-	products: Product[];
-	status: 'loading' | 'success' | 'error';
+  products: Product[];
+  status: 'loading' | 'success' | 'error';
 }

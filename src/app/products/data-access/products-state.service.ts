@@ -20,7 +20,7 @@ export class ProductStateService {
         map((products) => ({
           products,
           status: 'success' as const, // Asegura que el tipo sea 'success'
-        }))
+        })),
       ),
     ],
   });

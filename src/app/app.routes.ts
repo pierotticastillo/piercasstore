@@ -6,7 +6,8 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./products/features/product-shell/product.route'),
   },
-	{
-		path:"**", redirectTo:"products"
-	}
+  {
+    path: '**',
+    redirectTo: 'products',
+  },
 ];
