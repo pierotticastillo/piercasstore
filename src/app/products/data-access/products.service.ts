@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BaseHttpService } from '../../shared/data-access/base-http-service';
 
-const LIMIT = 5;
+const LIMIT = 4;
 
 @Injectable({
   providedIn: 'root',
