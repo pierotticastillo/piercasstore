@@ -26,4 +26,8 @@ export default class ProductDetailComponent {
       this.productDetailState.getById(productId);
     });
   }
+
+  get status() {
+    return this.productDetailState.state.status;
+  }
 }

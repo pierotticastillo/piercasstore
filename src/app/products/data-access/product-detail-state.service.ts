@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { BehaviorSubject, catchError, map, switchMap, of } from 'rxjs';
+import { BehaviorSubject, catchError, map, switchMap, of, tap } from 'rxjs';
 import { ProductService } from './products.service';
 import { DetailState } from '../../shared/interfaces/detail-state.interface';
 
@@ -17,9 +17,13 @@ export class ProductDetailStateService {
   constructor() {}
 
   getById(id: string) {
+    // Emitimos el estado de "loading" antes de llamar al servicio
+    this._state.next({ product: null, status: 'loading' });
+
     this.productsService
       .getProductById(id)
       .pipe(
+        tap(() => console.log('🔵 Calling getProductById with:', id)),
         map((data) => ({ product: data, status: 'success' as const })),
         catchError((error) => {
           return of({ product: null, status: 'error' as const });
@@ -28,5 +32,9 @@ export class ProductDetailStateService {
       .subscribe((newState) => {
         this._state.next(newState);
       });
+  }
+
+  get state() {
+    return this._state.getValue();
   }
 }
