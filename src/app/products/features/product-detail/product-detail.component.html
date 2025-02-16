@@ -3,68 +3,46 @@
     <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
       <div class="shrink-0 max-w-md lg:max-w-lg mx-auto">
         <!-- Mostrar imagen solo si el producto está cargado -->
-        <img
-          *ngIf="
+        <img *ngIf="
             (productDetailState.state$ | async)?.status !== 'loading' &&
             (productDetailState.state$ | async)?.status !== 'error' &&
             (product$ | async)?.image
-          "
-          class="w-full"
-          [src]="(product$ | async)?.image"
-          alt="Product Image"
-        />
+          " class="w-full" [src]="(product$ | async)?.image" alt="Product Image" />
       </div>
 
       <div class="mt-6 sm:mt-8 lg:mt-0">
         <!-- Título del producto -->
-        <div
-          *ngIf="
+        <div *ngIf="
             (productDetailState.state$ | async)?.status === 'loading';
             else showProduct
-          "
-        >
-          <h1>Loading...</h1>
+          ">
+          <h1
+            class="text-3xl font-bold bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300 bg-clip-text text-transparent animate-pulse">
+            Cargando...
+          </h1>
         </div>
 
         <ng-template #showProduct>
-          <h1
-            class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white"
-          >
+          <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">
             {{ (product$ | async)?.title }}
           </h1>
 
           <!-- Precio del producto -->
           <div class="mt-4 sm:items-center sm:gap-4 sm:flex">
-            <p
-              class="text-2xl font-extrabold text-gray-900 sm:text-3xl dark:text-white"
-            >
+            <p class="text-2xl font-extrabold text-gray-900 sm:text-3xl dark:text-white">
               ${{ (product$ | async)?.price }}
             </p>
           </div>
 
           <!-- Botón de agregar al carrito -->
           <div class="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
-            <button
-              title=""
+            <button title=""
               class="text-white mt-4 sm:mt-0 bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 flex items-center justify-center"
-              role="button"
-            >
-              <svg
-                class="w-5 h-5 -ms-2 me-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
-                />
+              role="button">
+              <svg class="w-5 h-5 -ms-2 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6" />
               </svg>
 
               Agregar al carrito

@@ -1,26 +1,28 @@
 <div class="mx-auto max-w-screen-xl">
   @switch (productsState.state.status()) {
-    @case ("loading") {
-      <h1 class>Loading...</h1>
+  @case ("loading") {
+  <h1
+    class="text-3xl font-bold bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300 bg-clip-text text-transparent animate-pulse">
+    Cargando...
+  </h1>
+  }
+  @case ("error") {
+    <h1
+    class="text-3xl font-bold bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300 bg-clip-text text-transparent animate-pulse">
+    Error...
+  </h1>  }
+  @default {
+  <div class="flex justify-end my-6">
+    <button type="button" (click)="changePage()"
+      class="text-white bg-green-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+      Siguiente
+    </button>
+  </div>
+  <div class="grid grid-cols-[repeat(4,300px)] gap-6">
+    @for (product of productsState.state().products; track product) {
+    <app-product-card [product]="product" />
     }
-    @case ("error") {
-      <h1 class>Error...</h1>
-    }
-    @default {
-      <div class="flex justify-end my-6">
-        <button
-          type="button"
-          (click)="changePage()"
-          class="text-white bg-green-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-        >
-          Siguiente
-        </button>
-      </div>
-      <div class="grid grid-cols-[repeat(4,300px)] gap-6">
-        @for (product of productsState.state().products; track product) {
-          <app-product-card [product]="product" />
-        }
-      </div>
-    }
+  </div>
+  }
   }
 </div>
