@@ -22,6 +22,12 @@
           </h1>
         </div>
 
+        <div *ngIf="(productDetailState.state$ | async)?.status === 'error'">
+          <h1 class="text-3xl font-bold text-red-600">
+            Error al cargar el producto
+          </h1>
+        </div>
+
         <ng-template #showProduct>
           <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">
             {{ (product$ | async)?.title }}
@@ -30,7 +36,7 @@
           <!-- Precio del producto -->
           <div class="mt-4 sm:items-center sm:gap-4 sm:flex">
             <p class="text-2xl font-extrabold text-gray-900 sm:text-3xl dark:text-white">
-              ${{ (product$ | async)?.price }}
+              {{ (product$ | async)?.price | currency }}
             </p>
           </div>
 
@@ -44,7 +50,6 @@
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6" />
               </svg>
-
               Agregar al carrito
             </button>
           </div>

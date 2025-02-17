@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common'; // Importar CommonModule
+import { CommonModule, CurrencyPipe } from '@angular/common'; // Importar CommonModule
 import { ProductDetailStateService } from './../../data-access/product-detail-state.service';
 import { Component, effect, inject, input } from '@angular/core';
 import { map, Observable } from 'rxjs';
@@ -7,7 +7,7 @@ import { Product } from '../../../shared/interfaces/products.interface';
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [CommonModule], // Agregar CommonModule aquí
+  imports: [CommonModule, CurrencyPipe], // Agregar CommonModule aquí
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.scss'],
 })
