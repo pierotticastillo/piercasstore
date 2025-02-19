@@ -29,6 +29,16 @@ export class CartStateService {
   state = signalSlice({
     initialState: this.initialState,
     sources: [this.loadProducts$],
+    selectors: (state) => ({
+      count: () =>
+        state().products.reduce((acc, product) => acc + product.quantity, 0),
+      price: () => {
+        return state().products.reduce(
+          (acc, product) => acc + product.product.price * product.quantity,
+          0,
+        );
+      },
+    }),
     actionSources: {
       add: (state, action$: Observable<ProductItemCart>) =>
         action$.pipe(map((product) => this.add(state, product))),

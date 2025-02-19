@@ -2,7 +2,7 @@ import { Product } from './../../shared/interfaces/products.interface';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { BaseHttpService } from '../../shared/data-access/base-http-service';
+import { BaseHttpService } from '../../shared/data-access/base-http.service';
 
 const LIMIT = 4;
 

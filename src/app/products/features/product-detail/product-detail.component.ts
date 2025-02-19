@@ -3,6 +3,7 @@ import { ProductDetailStateService } from './../../data-access/product-detail-st
 import { Component, effect, inject, input, output } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Product } from '../../../shared/interfaces/products.interface';
+import { CartStateService } from '../../../shared/data-access/cart-state.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -14,6 +15,7 @@ import { Product } from '../../../shared/interfaces/products.interface';
 export default class ProductDetailComponent {
   productDetailState = inject(ProductDetailStateService);
   id = input.required<string>();
+  cartState = inject(CartStateService).state;
 
   // Observable que emite los datos del producto
   product$: Observable<Product | null> = this.productDetailState.state$.pipe(
@@ -30,11 +32,12 @@ export default class ProductDetailComponent {
   get status() {
     return this.productDetailState.state.status;
   }
-  product = input.required<Product>();
-    addToCart = output<Product>();
-    add(event: Event) {
-      event.stopPropagation();
-      event.preventDefault();
-      this.addToCart.emit(this.product());
-    }
+
+  addToCart(){
+    this.cartState.add({
+      product: this.productDetailState.state.product!,
+      quantity: 1,
+    })
+
+  }
 }

@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { CartItemComponent } from './ui/cart-item/cart-item.component';
 import { CartStateService } from '../shared/data-access/cart-state.service';
 import { ProductItemCart } from '../shared/interfaces/product-item-cart';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CartItemComponent],
+  imports: [CartItemComponent, CurrencyPipe],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
 })
