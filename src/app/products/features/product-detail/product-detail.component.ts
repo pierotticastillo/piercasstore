@@ -1,6 +1,6 @@
 import { CommonModule, CurrencyPipe } from '@angular/common'; // Importar CommonModule
 import { ProductDetailStateService } from './../../data-access/product-detail-state.service';
-import { Component, effect, inject, input } from '@angular/core';
+import { Component, effect, inject, input, output } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Product } from '../../../shared/interfaces/products.interface';
 
@@ -30,4 +30,11 @@ export default class ProductDetailComponent {
   get status() {
     return this.productDetailState.state.status;
   }
+  product = input.required<Product>();
+    addToCart = output<Product>();
+    add(event: Event) {
+      event.stopPropagation();
+      event.preventDefault();
+      this.addToCart.emit(this.product());
+    }
 }
