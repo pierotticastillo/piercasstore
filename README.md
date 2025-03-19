@@ -6,11 +6,11 @@ Piercasstore es un proyecto frontend de una tienda de e-commerce desarrollado co
 
 ## 🚀 Tecnologías utilizadas
 
-- **Angular CLI** versión 18.2.14
-- **TypeScript**
-- **Tailwind CSS** para los estilos
-- **RxJS** para el manejo reactivo del estado
-- **Angular Router** para la navegación
+- <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular CLI" width="20" height="20"> **Angular CLI** versión 18.2.14
+- <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript" width="20" height="20"> **TypeScript**
+- <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS" width="20" height="20"> **Tailwind CSS** para los estilos
+- <img src="https://rxjs.dev/assets/images/logos/logo.png" alt="RxJS" width="20" height="20"> **RxJS** para el manejo reactivo del estado
+- <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular Router" width="20" height="20"> **Angular Router** para la navegación
 
 ---
 
@@ -28,7 +28,7 @@ Piercasstore es un proyecto frontend de una tienda de e-commerce desarrollado co
 
 ### 1️⃣ Clona el repositorio
 ```bash
-git clone https://github.com/tu-usuario/piercasstore.git
+git clone https://github.com/pierotticastillo/piercasstore.git
 cd piercasstore
 ```
 
@@ -96,3 +96,7 @@ Este proyecto está bajo la licencia [MIT](LICENSE).
 
 ✨ **¡Gracias por visitar Piercasstore! Espero que este proyecto te inspire y te ayude en tu camino como desarrollador Full Stack.** 🚀
 
+---
+
+### Nota:
+Los logos utilizados son representativos y pueden estar sujetos a derechos de autor. Asegúrate de utilizar las imágenes oficiales o con licencia adecuada en tu proyecto.
