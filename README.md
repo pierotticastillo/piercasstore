@@ -96,4 +96,11 @@ Este proyecto está bajo la licencia [MIT](LICENSE).
 
 ✨ **¡Gracias por visitar Piercasstore! Espero que este proyecto te inspire y te ayude en tu camino como desarrollador Full Stack.** 🚀
 
+<<<<<<< HEAD
 ---
+=======
+---
+
+### Nota:
+Los logos utilizados son representativos y pueden estar sujetos a derechos de autor. Asegúrate de utilizar las imágenes oficiales o con licencia adecuada en tu proyecto.
+>>>>>>> 4a8dd21efa839f1a1e68af7622cd34b1be427e11
