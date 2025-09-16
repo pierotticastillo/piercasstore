@@ -90,7 +90,7 @@ Este proyecto fue creado con el apoyo del canal de YouTube [CarlosMoralesDev](ht
 
 ## 📄 Licencia
 
-Este proyecto está bajo la licencia [MIT](LICENSE).
+Este proyecto está bajo la licencia [MIT](./LICENSE).
 
 ---
 
